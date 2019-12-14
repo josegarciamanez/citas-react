@@ -5,7 +5,14 @@ import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
-    title: 'Citas Médicas'
+    title: 'Citas Médicas Mascotas',
+    citas: []
+  }
+  crearNuevaCita = datos => {
+    const citas = [...this.state.citas, datos];
+    this.setState({
+      citas
+    });
   }
   render() {
     return (
@@ -13,7 +20,9 @@ class App extends Component {
         <Header
           title={this.state.title.toUpperCase()}
         />
-        <CrearCita />
+        <CrearCita
+          crearNuevaCita={this.crearNuevaCita}
+        />
         <Footer />
       </div>
     );

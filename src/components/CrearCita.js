@@ -42,10 +42,12 @@ class CrearCita extends Component {
 
 
   render() {
+    const error = this.state.error;
     return (
       <div className="container-fluid">
         <div className="card card-form mt-5 p-4">
           <h2 className="text-center text-secondary">Rellenar formulario para crear nueva cita</h2>
+          {error ? <div className="bg-danger text-white text-center p-2 mb-3">Todos Los Campos son obligatorios</div> : null}
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label>Nombre Mascota</label>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from "./components/Header";
 import CrearCita from './components/CrearCita';
+import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
@@ -13,6 +14,7 @@ class App extends Component {
           title={this.state.title.toUpperCase()}
         />
         <CrearCita />
+        <Footer />
       </div>
     );
   }

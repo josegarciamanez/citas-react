@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "./components/Header";
 import CrearCita from './components/CrearCita';
 import Footer from "./components/Footer";
+import ListaCitas from './components/ListaCitas';
 
 class App extends Component {
   state = {
@@ -22,6 +23,9 @@ class App extends Component {
         />
         <CrearCita
           crearNuevaCita={this.crearNuevaCita}
+        />
+        <ListaCitas
+          citas={this.state.citas}
         />
         <Footer />
       </div>

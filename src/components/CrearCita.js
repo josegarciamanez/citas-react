@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 
+
 const stateInicial = {
   cita: {
     mascota: '',
@@ -16,21 +17,21 @@ class CrearCita extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    // Extraer valores del state
+    // !Extraer valores del state
     const { mascota, propietario, fecha, hora, sintomas } = this.state.cita;
-    // Validar que todos los campos estén llenos
+    // !Validar que todos los campos estén llenos
     if (mascota === '' || propietario === '' || fecha === '' || hora === '' || sintomas === '') {
       this.setState({
         error: true
       });
-      //detener ejecucion
+      // !detener ejecucion
       return;
     }
     const nuevaCita = { ...this.state.cita };
     nuevaCita.id = uuid();
-    // Agregar cita al state de App
+    // !Agregar cita al state de App
     this.props.crearNuevaCita(nuevaCita)
-    // Borrar formulario volviendo al state stateInicial
+    // !Borrar formulario volviendo al state stateInicial
     this.setState({
       ...stateInicial
     })

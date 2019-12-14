@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 
+const stateInicial = {
+  cita: {
+    mascota: '',
+    propietario: '',
+    fecha: '',
+    hora: '',
+    sintomas: ''
+  },
+  error: false
+}
 class CrearCita extends Component {
-  state = {
-    cita: {
-      mascota: '',
-      propietario: '',
-      fecha: '',
-      hora: '',
-      sintomas: ''
-    },
-    error: false
-  }
+  state = { ...stateInicial }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -29,6 +30,10 @@ class CrearCita extends Component {
     nuevaCita.id = uuid();
     // Agregar cita al state de App
     this.props.crearNuevaCita(nuevaCita)
+    // Borrar formulario volviendo al state stateInicial
+    this.setState({
+      ...stateInicial
+    })
   }
 
   handleChange = e => {

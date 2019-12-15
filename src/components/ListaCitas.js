@@ -1,7 +1,7 @@
 import React from 'react';
 import Cita from './Cita';
 
-const ListaCitas = ({ citas }) => {
+const ListaCitas = ({ citas, borrarCita }) => {
   return (
     <div className="container-fluid mt-3">
       <div className="card mx-auto p-3 text-center">
@@ -13,6 +13,7 @@ const ListaCitas = ({ citas }) => {
             <Cita
               key={cita.id}
               cita={cita}
+              borrarCita={borrarCita}
             />
           ))}
         </div>

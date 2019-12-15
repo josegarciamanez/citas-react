@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import PropTypes from 'prop-types';
 
 
 const stateInicial = {
@@ -67,7 +68,7 @@ class CrearCita extends Component {
               />
             </div>
             <div className="form-group">
-              <label>Nombre Dueño</label>
+              <label>Nombre Propietario</label>
               <input
                 type="text"
                 name="propietario"
@@ -116,6 +117,10 @@ class CrearCita extends Component {
       </div>
     );
   }
+}
+
+CrearCita.propTypes = {
+  crearNuevaCita: PropTypes.func.isRequired
 }
 
 export default CrearCita;
